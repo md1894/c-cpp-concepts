@@ -1,1 +1,8 @@
-pthreads info 
+major differences between process and thread is that, 
+
+1. Threads are LWP (light weight process) , one process can have multiple threads running 
+   but one thread cannot have multiple process running inside it.
+
+2. Threads share a common memory to the process where it is created, but if i create a child process it have its separate memory (space for all the variable is separately created for child thread)
+
+in the programs we will see point number 2
