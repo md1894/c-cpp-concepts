@@ -30,6 +30,7 @@ int main(){
 	void *ret;
 	//fun(NULL);
 	//fun(NULL);
+	pthread_mutex_init(&lock, NULL);
 	pthread_create(&thread1, NULL, fun, NULL);
 	/**
 	 * int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg);
@@ -59,6 +60,7 @@ int main(){
 	*/
 
 	pthread_join(thread2, &ret);
+	pthread_mutex_destroy(&lock);
 	cout << "Value of Shared Value is " << shared << endl;
 	cout << "Thread Exited With a Status " << (char*)ret << endl;
 
