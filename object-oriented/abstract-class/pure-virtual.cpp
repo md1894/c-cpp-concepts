@@ -4,6 +4,9 @@ using namespace std;
 /*
 A pure virtual function is implemented by classes which are derived from a Abstract class. 
 Following is a simple example to demonstrate the same.
+
+A pure virtual function its child must implement , if child has not implemented (override) 
+parents's pure virtual function, then that child will also become abstract class
 */
 
 class base{
