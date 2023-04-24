@@ -37,48 +37,48 @@ double sum(double a, double b){
 }
 
 int main(){
-    auto i = 10;// integer
-    auto j = 10 + 15.37; // final type of expression is float
-    auto res = sum(25.78 , 78.23); // return type of a function
-    static auto y = 2; // auto can have static qualifier
+   auto i = 10;// integer
+   auto j = 10 + 15.37; // final type of expression is float
+   auto res = sum(25.78 , 78.23); // return type of a function
+   static auto y = 2; // auto can have static qualifier
 
-    /*
-    variable x is an const variable , but when it is assigned to v (auto)
-    it's type is deduced as 'int', in actual data type of x is --> 'const int'
-    */
-    const int x = 10;
-    auto v = x;
-    v = 150;
+   /*
+   variable x is an const variable , but when it is assigned to v (auto)
+   it's type is deduced as 'int', in actual data type of x is --> 'const int'
+   */
+   const int x = 10;
+   auto v = x;
+   v = 150;
 
-    cout << v << endl;
+   cout << v << endl;
 
-    /*
-    to solve the above problem
-    you must use const with auto , to make that variable const
-    */
-   
+   /*
+   to solve the above problem
+   you must use const with auto , to make that variable const
+   */
+
    const auto v1 = x;
    // v1 = 250; // this code will result in error
    /*
    error: assignment of read-only variable ‘v1’
-            v1 = 250;
+         v1 = 250;
    */
 
-  /* if we declare auto a reference type , no need to add const */
-    auto &v2 = x;
-    // type of v2 is const int& (const integer reference)
-    //v2 = 250;
-    /*
-    error: assignment of read-only reference ‘v2’
-        v2 = 250;
-    */
-    auto ptr = &x;
-    //*ptr = 350;
-    /*
-    error: assignment of read-only location ‘* ptr’
-        *ptr = 350;
-    */
-    return 0;
+   /* if we declare auto a reference type , no need to add const */
+   auto &v2 = x;
+   // type of v2 is const int& (const integer reference)
+   //v2 = 250;
+   /*
+   error: assignment of read-only reference ‘v2’
+      v2 = 250;
+   */
+   auto ptr = &x;
+   //*ptr = 350;
+   /*
+   error: assignment of read-only location ‘* ptr’
+      *ptr = 350;
+   */
+   return 0;
 }
 
 

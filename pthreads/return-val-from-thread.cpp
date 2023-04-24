@@ -9,7 +9,8 @@ pthread_mutex_t lock;
 void *routine(void *data){
     int *res = (int*) malloc(sizeof(int));
     *res = 100;
-    pthread_exit((void*)res);
+    //pthread_exit((void*)res); /// this line is also OK
+    return (void*)res;
 }
 
 int main(){

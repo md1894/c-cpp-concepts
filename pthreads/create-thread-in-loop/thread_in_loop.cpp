@@ -49,6 +49,10 @@ of calling join , observe output carefully
 */
 
 /*
+join : calling thread will wait till the target thread finishes it's execution
+*/
+
+/*
 Thread 1 Finished Actually 
 Thread no 1 Finished 
 Thread 2 Finished Actually 
