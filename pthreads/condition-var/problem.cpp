@@ -8,13 +8,15 @@ pthread_mutex_t lock;
 
 
 void* fill_tank(void *data){
-    pthread_mutex_lock(&lock);
+    
     for(int i = 0; i < 15; i++){
+        pthread_mutex_lock(&lock);
         fuel_level += 15;
+        pthread_mutex_unlock(&lock);
         cout << "Filling Fuel , current level is " << fuel_level << endl;
         sleep(1);
     }
-    pthread_mutex_unlock(&lock);
+    
     return 0;
 }
 

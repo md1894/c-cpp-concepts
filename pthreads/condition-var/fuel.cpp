@@ -42,6 +42,7 @@ void* consume_fuel(void *data){
 int main(){
     pthread_t fill_thread, consume_thread;
     pthread_mutex_init(&lock, NULL);
+    pthread_cond_init(&condition, NULL);
     for(int i = 0; i < 2; i++){
         if(pthread_create(i == 0 ? &fill_thread : &consume_thread, NULL, 
             i == 0 ? fill_tank : consume_fuel, NULL) != 0){
@@ -54,6 +55,7 @@ int main(){
             perror("Error in joining threads");
         }
     }
+    pthread_cond_destroy(&condition);
     pthread_mutex_destroy(&lock);
     return 0;
 }
