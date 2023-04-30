@@ -9,12 +9,12 @@ pthread_cond_t condition;
 
 
 void* fill_tank(void *data){
-    pthread_mutex_lock(&lock);
     for(int i = 0; i < 15; i++){
+        pthread_mutex_lock(&lock);
         fuel_level += 15;
         cout << "Filling Fuel , current level is " << fuel_level << endl;
         pthread_mutex_unlock(&lock);
-        pthread_cond_broadcast(&condition);
+        pthread_cond_signal(&condition);
         sleep(1);
 
     }
