@@ -11,7 +11,7 @@ typedef struct Task {
     int a, b;
 } Task;
 
-Task taskQueue[256];
+Task taskQueue[8];
 int taskCount = 0;
 
 pthread_mutex_t mutexQueue;
