@@ -2,10 +2,26 @@
 #include<string.h>
 using namespace std;
 
+/*
+calculate the length of the string
+*/
+
+int length(char *ptr){
+	if(*ptr == 0)
+		return 0;
+	return 1 + length(ptr+1);
+}
+
+void swap(int &a, int &b){
+	int temp = a;
+	a = b;
+	b = temp;
+}
+
 void reverse(char *word){
-	int len = strlen(word);
+	int len = length(word);
 	for(int i = 0; i < len/2; i++){
-		std::swap(word[i], word[len-i-1]);
+		swap(word[i], word[len-i-1]);
 	}
 }
 
@@ -34,3 +50,7 @@ int main(){
 	}
 	return 0;
 }
+
+/*
+online GDB to welcome
+*/
