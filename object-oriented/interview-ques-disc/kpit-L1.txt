@@ -1,0 +1,87 @@
+QUESTION 1
+***********************************************************************************************
+what is the difference between oops in c++ and in general oops concepts ?
+
+
+
+In general, Object-Oriented Programming (OOP) concepts refer to a programming paradigm that 
+emphasizes the use of objects and classes to organize code and data. 
+OOP concepts are not tied to any specific programming language.
+
+C++ is an object-oriented programming language, and it implements the OOP concepts such as 
+encapsulation, inheritance, and polymorphism. However, there are some differences between OOP in C++ 
+and OOP in general:
+
+1. Multiple inheritance: C++ supports multiple inheritance, which allows a class 
+to inherit from more than one base class. This is not supported in all OOP languages.
+
+2. Virtual functions: C++ supports virtual functions, which allow a function to be overridden 
+by a derived class. This is a powerful feature of C++ that is not found in all OOP languages.
+
+3. Templates: C++ supports templates, which allow for generic programming. 
+This is a feature that is not found in all OOP languages.
+
+4. Pointers: C++ allows the use of pointers, which can be a powerful tool for implementing OOP concepts,
+but can also be a source of bugs and errors if not used carefully.
+
+In summary, while the core OOP concepts are the same across different programming languages, 
+the specific implementation of these concepts in C++ may differ from other OOP languages 
+due to features unique to C++.
+
+*******************************************************************************************************
+
+
+QUESTION 2
+***********************************************************************************************
+in c++ how and when vtable is created
+
+
+In C++, the virtual function table (V-table) is created by the compiler at compile-time.
+
+The V-table is created for each class that has at least one virtual function, and it contains an entry 
+for each virtual function in the class. The entries in the V-table are ordered according to the order 
+in which the virtual functions are declared in the class.
+
+Each entry in the V-table is a function pointer that points to the appropriate virtual function 
+implementation for that class. When a virtual function is called on an object, the runtime system uses 
+the object's V-table pointer to locate the appropriate virtual function implementation in the V-table 
+and calls it.
+
+The V-table is initialized when an object is created and its constructor is called. 
+The constructor initializes the V-table pointer to point to the V-table of the object's class. 
+If the object is a derived class object, the V-table pointer is updated to point to the 
+derived class V-table after the derived class constructor is called.
+
+It's important to note that the exact details of V-table creation and initialization may vary 
+depending on the compiler and platform being used. However, the general process described 
+above is how virtual function dispatch typically works in C++.
+
+********************************************************************************************************
+
+QUESTION 3
+********************************************************************************************************
+IN HOW MANY WAYS WE CAN CREATE THREADS IN C++
+
+1. USING std::thread class , we can create its object , pass function 
+2. USING PTHREAD API , create pthread_t (thread handle) and call function
+    pthread_create -->pass thread handle and function
+
+*********************************************************************************************************
+
+***********************************************************************************************************
+WHAT IS pthread_t
+
+`pthread_t` is a data type defined in the POSIX threads (pthread) library, 
+which is a C library for creating and managing threads in a portable and standard way across 
+different platforms. 
+
+In the pthreads library, a `pthread_t` data type is used to represent a thread identifier, 
+which is an opaque object that identifies a thread. It is used to manage and control a thread, 
+such as starting, stopping, joining, or detaching the thread.
+
+When a new thread is created using the `pthread_create()` function, it returns a `pthread_t` object 
+that represents the new thread. This object is used to control and manipulate the thread by passing 
+it as a parameter to other pthread functions like `pthread_join()`, `pthread_detach()`, or 
+`pthread_cancel()`.
+
+**********************************************************************************************************************
