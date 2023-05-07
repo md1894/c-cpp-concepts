@@ -1,0 +1,35 @@
+*****************************************************************************************************
+default move constructor and move assignment operator , always provided by compiler if not defined ?
+
+
+The default move constructor and move assignment operator are 
+provided by the compiler only under certain conditions. 
+
+If the class has no user-defined destructor, 
+copy constructor, 
+copy assignment operator, 
+or virtual functions, 
+then the compiler will automatically generate 
+a default move constructor and 
+move assignment operator. 
+This is known as the Rule of Zero or the Zero-overhead Principle.
+
+However, if any of these functions are defined by the programmer, 
+then the compiler will not generate a default move constructor 
+or move assignment operator unless the programmer 
+explicitly requests it using the "default" keyword. 
+This is because the presence of a user-defined destructor 
+or copy constructor implies that the class manages 
+some kind of resource, 
+and the default move constructor or move assignment operator 
+may not be appropriate for properly 
+transferring ownership of that resource.
+
+It is also important to note that if the class has const or 
+reference member variables, then the compiler will not 
+generate a default move constructor or move assignment operator. 
+In this case, the programmer must define their own 
+move constructor and move assignment operator or 
+prevent the class from being movable by deleting those functions.
+
+*************************************************************************************************
