@@ -4,13 +4,16 @@ class Object {
 public:
     static int count_with_new;
     static int count_without_new;
-
+    int a;
     Object() {
+	this->a = 0;
+	std::cout << "default cons called\n";
         count_without_new++;
     }
 
     static void* operator new(size_t size) {
         count_with_new++;
+	std::cout << "overloaded new called\n"; 
         return ::operator new(size);
     }
 
