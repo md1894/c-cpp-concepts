@@ -10,7 +10,7 @@
 
 void* routine(void* args) {
     pthread_t th = pthread_self();
-    printf("%ul\n", th);
+    printf("%u\n", th);
     printf("%d\n", (pid_t) syscall(SYS_gettid));
 }
 
@@ -32,3 +32,10 @@ int main(int argc, char *argv[]) {
     }
     return 0;
 }
+
+/*
+2532542016
+7225
+2524149312
+7226
+*/
