@@ -68,8 +68,8 @@ int main(int argc, char* argv[]) {
     srand(time(NULL));
     for (i = 0; i < 100; i++) {
         Task t = {
-            .a = rand() % 100,
-            .b = rand() % 100
+            .a = rand() % 37,
+            .b = rand() % 23
         };
         submitTask(t);
     }
