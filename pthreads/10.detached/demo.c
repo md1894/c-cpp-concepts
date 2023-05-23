@@ -34,3 +34,10 @@ int main(int argc, char *argv[]) {
     pthread_attr_destroy(&detachedThread);
     pthread_exit(0);
 }
+
+/*
+Failed to join thread: Success
+Failed to join thread: Success
+Finished execution
+Finished execution
+*/
