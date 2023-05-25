@@ -71,6 +71,22 @@ class List {
             this->length++;
         }
 
+        int get_middle(){
+            if(this->head == nullptr){
+                return -1;
+            }
+
+            Node *fast = this->head;
+            Node *slow = this->head;
+
+            while(fast != nullptr && fast->next != nullptr) {
+                fast = fast->next->next;
+                slow = slow->next;
+            }
+
+            return slow->data;
+        }
+
         int& operator[](int index) {
             
             if(index == 0 && this->head != nullptr)
@@ -110,14 +126,10 @@ int main(){
     list.add_element(10);
     list.add_element(20);
     list.add_element(30);
-    cout << list[2] << endl;
-    cout << "---------" << endl;
+    list.add_element(40);
+    list.add_element(50);
+    list.add_element(60);
     cout << list;
-    list.insert_at(1, 1);
-    cout << list;
-    list.insert_at(1500, 0);
-    cout << list;
-    list.insert_at(1700, 5);
-    cout << list;
+    cout << list.get_middle() << endl;
     return 0;
 }
