@@ -35,6 +35,13 @@ class C : public B {
 		}
 };
 
+class D : public A {
+	public:
+		void fun2() {
+			cout << "D::fun2" << endl;
+		}
+};
+
 int main() {
 	A *ptr = new B ();
 	ptr->fun1();
@@ -42,6 +49,9 @@ int main() {
 	
 	B *ptr1 = new C ();
 	ptr1->fun2(); // now there is effect of virtual keyword
+
+	A *ptr2 = new D ();
+	ptr2->fun2();
 	return 0;
 }
 
