@@ -34,3 +34,7 @@ int main() {
 
     return 0;
 }
+
+/*
+Repeating pattern: aabc
+*/
