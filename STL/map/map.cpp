@@ -39,6 +39,16 @@ int main() {
     for(const auto &val : cust_map){
 	    cout << "cust_map["+val.first+"] = " + val.second << endl;
     }
+
+    cout << "Mutating the Map " << endl;
+
+    std::for_each(cust_map.begin(), cust_map.end(), [](pair<const string, string>& el){
+        el.second += "$";
+    });
+
+    for(const auto &val : cust_map){
+	    cout << "cust_map["+val.first+"] = " + val.second << endl;
+    }
     return 0;
 }
 
@@ -57,4 +67,10 @@ cust_map[0001000000123] = 24521278855255
 cust_map[0001000000222] = 24032023005218
 cust_map[0001000000257] = 24032023000145
 cust_map[0001000000458] = 24032023045454
+Mutating the Map 
+cust_map[0001000000001] = 24055555555555$
+cust_map[0001000000123] = 24521278855255$
+cust_map[0001000000222] = 24032023005218$
+cust_map[0001000000257] = 24032023000145$
+cust_map[0001000000458] = 24032023045454$
 */
